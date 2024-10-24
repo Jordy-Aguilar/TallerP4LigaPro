@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            background-color: #ffffff; /* Fondo blanco */
+            color: #0f0f0f; /* Cambié el color del texto a un verde oscuro */
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            display: block;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .headline {
+            font-size: 36px;
+            font-weight: bold;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .introduction {
+            font-size: 18px;
+            margin: 10px 0;
+            max-width: 600px;
+            line-height: 1.5;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .nav {
+            margin: 20px 0;
+        }
+
+        .nav a {
+            display: block;
+            color: #0f0f0f; 
+            font-size: 20px;
+            text-decoration: none;
+            margin: 10px 0;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #c7b148; 
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+        }
+
+        .cta {
+            margin-top: 30px;
+            font-size: 16px;
+            background-color: #f0e68c; /* Fondo dorado */
+            color: #0f0f0f; /* Texto en verde oscuro */
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .cta:hover {
+            background-color: #c7b148; /* Efecto de hover en el botón */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="https://paladarnegro.net/escudoteca/ligas/ligas/png/ecuador.png" alt="LigaPro Logo">
+        <h1 class="headline">Liga Pro </h1>
+        <p class="introduction">
+            Taller de programacion IV: Bienvenidos a la LigaPro, el corazón del fútbol profesional ecuatoriano. 
+        <p class="introduction">
+            Jordy Aguilar
+        </p>
+       
+    </div>
+   
+</body>
+</html>

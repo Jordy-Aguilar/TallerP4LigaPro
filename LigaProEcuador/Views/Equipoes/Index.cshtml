@@ -1,0 +1,137 @@
+﻿@model IEnumerable<LigaProEcuador.Models.Equipo>
+
+@{
+    ViewData["Title"] = "Equipos";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - LigaProEcuador</title>
+    <style>
+        body {
+            background-color: #eaeaea;
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            color: #2980b9;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #7f8c8d;
+        }
+
+        .btn-create {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #2980b9;
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
+
+            .btn-create:hover {
+                background-color: #1a5276;
+            }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            .table th, .table td {
+                padding: 15px;
+                text-align: left;
+                border: 1px solid #dcdcdc;
+            }
+
+            .table th {
+                background-color: #2980b9;
+                color: #ffffff;
+                font-weight: bold;
+            }
+
+            .table tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            .table tr:hover {
+                background-color: #f1c40f;
+            }
+
+        .actions a {
+            margin: 0 5px;
+            color: #2980b9;
+            text-decoration: none;
+        }
+
+            .actions a:hover {
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <a class="btn-create" asp-action="Create">Agregar equipo</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Club</th>
+                    <th>Ciudad</th>
+                    <th>NRO Titulos</th>
+                    <th>Extranjeros? SI/NO</th>
+                    <th>Estadio</th>
+                    <th>Mas</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.NombreEquipo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CiudadEquipo)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Titulos)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AceptaExtranjeros)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Estadio)</td>
+                        <td class="actions">
+                            <a asp-action="Edit" asp-route-id="@item.IdEquipo">Modificar</a> |
+                            <a asp-action="Details" asp-route-id="@item.IdEquipo">Ver Detalles</a> |
+                            <a asp-action="Delete" asp-route-id="@item.IdEquipo">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

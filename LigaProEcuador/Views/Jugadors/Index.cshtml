@@ -1,0 +1,123 @@
+﻿@model IEnumerable<LigaProEcuador.Models.Jugador>
+
+@{
+    ViewData["Title"] = "Jugadores";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - LigaProEcuador</title>
+    <style>
+        body {
+            background-color: #eaeaea;
+            color: #333;
+            font-family: 'Verdana', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            color: #c70039;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+            .table th, .table td {
+                padding: 10px;
+                text-align: left;
+                border: 1px solid #ccc;
+            }
+
+            .table th {
+                background-color: #c70039;
+                color: #ffffff;
+            }
+
+            .table tr:hover {
+                background-color: #f2f2f2;
+            }
+
+        a {
+            color: #c70039;
+            text-decoration: none;
+        }
+
+        .btn-create {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #c70039;
+            color: #ffffff;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 18px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+
+            .btn-create:hover {
+                background-color: #a60029;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Liga Pro</h1>
+        <p>Agrega jugadores que desees</p>
+        <a class="btn-create" asp-action="Create">Agregar nuevo jugador</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                    <th>@Html.DisplayNameFor(model => model.Posicion)</th>
+                    <th>@Html.DisplayNameFor(model => model.Edad)</th>
+                    <th>@Html.DisplayNameFor(model => model.Equipo.IdEquipo)</th>
+                    <th>mas</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Posicion)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Edad)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Equipo.IdEquipo)</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.IdJugador">Editar</a> |
+                            <a asp-action="Details" asp-route-id="@item.IdJugador">Detalles</a> |
+                            <a asp-action="Delete" asp-route-id="@item.IdJugador">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
