@@ -1,16 +1,16 @@
 ﻿@model LigaProEcuador.Models.Estadio
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Agregar Nuevo Estadio";
 }
 
-<h1>Create</h1>
+<h1>Agregar Nuevo Estadio</h1>
 
-<h4>Estadio</h4>
+<h4>Agregar Nuevo Estadio</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Agregar Nuevo Estadio">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Direccion" class="control-label"></label>
@@ -32,14 +32,14 @@
                 <select asp-for="IdEquipo" class ="form-control" asp-items="ViewBag.IdEquipo"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Agregar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Regresar a la pagina anterior</a>
 </div>
 
 @section Scripts {
