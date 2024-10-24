@@ -15,9 +15,11 @@ namespace LigaProEcuador.Models
 
 
         public string CiudadEquipo {  get; set; }
+
         public int Titulos {  get; set; }
         public string AceptaExtranjeros {  get; set; }
         public string Estadio {  get; set; }
+
 
     }
 }
